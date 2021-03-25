@@ -5,14 +5,14 @@ $(document).ready(function () {
     const inputTwo = parseInt($("#side2").val());
     const inputThree = parseInt($("#side3").val());
 
-    if (inputOne === inputTwo && inputOne === inputThree) {
+    if (inputOne + inputTwo <= inputThree || inputTwo + inputThree <= inputOne || inputOne + inputThree <= inputTwo) {
+      $("#no").show();
+    } else if (inputOne === inputTwo && inputOne === inputThree) {
       $("#equal").show();
     } else if (inputOne === inputTwo || inputOne === inputThree || inputTwo === inputThree) {
       $("#iso").show();
     } else if (inputOne != inputTwo && inputOne != inputThree && inputTwo != inputThree) {
       $("#scal").show();
-    } else {
-      $("#no").show();
     }
   });
 });
